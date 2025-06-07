@@ -1,0 +1,19 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: vehicle-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/vehicle_service_db
+    username: root
+    password: harshima@147
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
