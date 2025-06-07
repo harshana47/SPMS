@@ -11,13 +11,14 @@
         <module name="eureka-server" />
         <module name="user-service" />
       </profile>
-      <profile name="Annotation profile for booking-service" enabled="true">
+      <profile name="Annotation profile for parking-space-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
         </processorPath>
+        <module name="parking-space-service" />
         <module name="booking-service" />
       </profile>
     </annotationProcessing>
@@ -26,6 +27,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="booking-service" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="parking-space-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
       <module name="vehicle-service" options="-parameters" />
     </option>
