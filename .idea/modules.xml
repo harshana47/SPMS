@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SPMS.iml" filepath="$PROJECT_DIR$/SPMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parking-space-service/parking-space-service.iml" filepath="$PROJECT_DIR$/parking-space-service/parking-space-service.iml" />
     </modules>
   </component>
 </project>
