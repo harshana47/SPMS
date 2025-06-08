@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ParkingSpaceServiceImpl implements ParkingSpaceService {
@@ -41,5 +42,17 @@ public class ParkingSpaceServiceImpl implements ParkingSpaceService {
         space.setOccupied(false);
         return repository.save(space);
     }
+
+    @Override
+    public List<ParkingSpace> filterSpaces(String city, Boolean available, Boolean occupied) {
+        List<ParkingSpace> spaces = repository.findAll();
+
+        return spaces.stream()
+                .filter(space -> city == null || space.getCity().equalsIgnoreCase(city))
+                .filter(space -> available == null || space.isAvailable() == available)
+                .filter(space -> occupied == null || space.isOccupied() == occupied)
+                .collect(Collectors.toList());
+    }
+
 }
 

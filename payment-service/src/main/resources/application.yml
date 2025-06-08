@@ -1,0 +1,23 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: PARKING-SPACE-SERVICE
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/payment_db?useSSL=false&serverTimezone=UTC
+    username: root
+    password: harshima@147
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+

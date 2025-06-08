@@ -39,5 +39,17 @@ public class ParkingSpaceController {
     public ResponseEntity<ParkingSpace> release(@PathVariable Long id) {
         return ResponseEntity.ok(service.releaseSpace(id));
     }
+
+    @GetMapping("/filter")
+    public ResponseEntity<List<ParkingSpace>> filterSpaces(
+            @RequestParam(required = false) String city,
+            @RequestParam(required = false) Boolean available,
+            @RequestParam(required = false) Boolean occupied) {
+
+        List<ParkingSpace> filtered = service.filterSpaces(city, available, occupied);
+        return ResponseEntity.ok(filtered);
+    }
+
+
 }
 

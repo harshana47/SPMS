@@ -14,4 +14,6 @@ public interface ParkingSpaceService {
     ParkingSpace reserveSpace(Long id);
 
     ParkingSpace releaseSpace(Long id);
+
+    List<ParkingSpace> filterSpaces(String city, Boolean available, Boolean occupied);
 }
