@@ -11,27 +11,27 @@ spring:
         - id: booking-service
           uri: lb://booking-service  # ✅ Use logical name registered in Eureka (NO "http://")
           predicates:
-            - Path=/users/{userId}/bookings/**
+            - Path=/api/v1/users/{userId}/bookings/**
 
         - id: parking-space-service
           uri: lb://parking-space-service
           predicates:
-            - Path=/parking-spaces/**
+            - Path=/api/v1/parking-spaces/**
 
         - id: payment-service
           uri: lb://payment-service
           predicates:
-            - Path=/payments/**
+            - Path=/api/v1/payments/**
 
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/users/**
+            - Path=/api/v1/users/**
 
         - id: vehicle-service
           uri: lb://vehicle-service
           predicates:
-            - Path=/vehicles/**
+            - Path=/api/v1/vehicles/**
 
 eureka:
   client:
