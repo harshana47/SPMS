@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: vehicle-service
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
   datasource:
     url: jdbc:mysql://localhost:3306/vehicle_service_db
     username: root

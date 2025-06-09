@@ -1,0 +1,41 @@
+server:
+  port: 8080  # ✅ Recommended to uncomment this to make gateway run on a defined port
+
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: booking-service
+          uri: lb://booking-service  # ✅ Use logical name registered in Eureka (NO "http://")
+          predicates:
+            - Path=/users/{userId}/bookings/**
+
+        - id: parking-space-service
+          uri: lb://parking-space-service
+          predicates:
+            - Path=/parking-spaces/**
+
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/payments/**
+
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/users/**
+
+        - id: vehicle-service
+          uri: lb://vehicle-service
+          predicates:
+            - Path=/vehicles/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

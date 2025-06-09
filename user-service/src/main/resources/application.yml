@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: user-service
+
+  config:
+    import: optional:configserver:http://localhost:8888  # ✅ Corrected this line
+
   datasource:
     url: jdbc:mysql://localhost:3306/user_service_db
     username: root

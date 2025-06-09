@@ -3,7 +3,10 @@ server:
 
 spring:
   application:
-    name: PARKING-SPACE-SERVICE
+    name: payment-service
+
+  config:
+    import: optional:configserver:http://localhost:9296
 
   datasource:
     url: jdbc:mysql://localhost:3306/payment_db?useSSL=false&serverTimezone=UTC

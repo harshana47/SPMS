@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: PARKING-SPACE-SERVICE
+    name: parking-space-service
 
   datasource:
     url: jdbc:mysql://localhost:3306/parking_space_db
