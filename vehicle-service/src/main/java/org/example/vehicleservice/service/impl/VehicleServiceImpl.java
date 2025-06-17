@@ -42,5 +42,10 @@ public class VehicleServiceImpl implements VehicleService {
         v.setInsideParking(false);
         return vehicleRepository.save(v);
     }
+
+    @Override
+    public List<Vehicle> getAll() {
+        return vehicleRepository.findAll();
+    }
 }
 

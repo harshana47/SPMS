@@ -8,5 +8,5 @@ spring:
         git:
           uri: https://github.com/harshana47/SPMS
           username: harshana47
-          password: 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   # Personal Access Token (not your GitHub password)
-          default-label: main         # or 'master' depending on your branch
+          password: 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
+          default-label: main

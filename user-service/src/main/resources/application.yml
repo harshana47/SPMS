@@ -6,7 +6,7 @@ spring:
     name: user-service
 
   config:
-    import: optional:configserver:http://localhost:8888  # ✅ Corrected this line
+    import: optional:configserver:http://localhost:8888
 
   datasource:
     url: jdbc:mysql://localhost:3306/user_service_db

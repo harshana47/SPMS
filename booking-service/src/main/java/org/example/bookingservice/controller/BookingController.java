@@ -23,7 +23,7 @@ public class BookingController {
 
     @PostMapping
     public ResponseEntity<Booking> createBooking(@PathVariable Long userId, @RequestBody Booking booking) {
-        booking.setUserId(userId);  // 🔥 This line fixes the null userId
+        booking.setUserId(userId);
         Booking savedBooking = bookingService.saveBooking(booking);
         return new ResponseEntity<>(savedBooking, HttpStatus.CREATED);
     }

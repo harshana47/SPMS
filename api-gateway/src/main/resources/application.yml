@@ -9,7 +9,7 @@ spring:
     gateway:
       routes:
         - id: booking-service
-          uri: lb://booking-service  # ✅ Use logical name registered in Eureka (NO "http://")
+          uri: lb://booking-service
           predicates:
             - Path=/api/v1/users/{userId}/bookings/**
 

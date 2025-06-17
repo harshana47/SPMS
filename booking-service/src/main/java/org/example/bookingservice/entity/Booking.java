@@ -24,7 +24,7 @@ public class Booking {
     private String vehicle;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
-    private String status;  // e.g. COMPLETED, CANCELED
+    private String status;
 
 }
 

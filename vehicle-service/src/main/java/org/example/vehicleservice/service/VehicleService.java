@@ -15,4 +15,6 @@ public interface VehicleService {
     Vehicle simulateEntry(Long id);
 
     Vehicle simulateExit(Long id);
+
+    List<Vehicle> getAll();
 }

@@ -30,6 +30,11 @@ public class VehicleController {
         return ResponseEntity.ok(vehicleService.updateVehicle(id, vehicle));
     }
 
+    @GetMapping
+    public ResponseEntity<List<Vehicle>> getAll() {
+        return ResponseEntity.ok(vehicleService.getAll());
+    }
+
     @PutMapping("/{id}/enter")
     public ResponseEntity<Vehicle> simulateEntry(@PathVariable Long id) {
         return ResponseEntity.ok(vehicleService.simulateEntry(id));

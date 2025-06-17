@@ -18,7 +18,6 @@ public class UserServiceImpl implements UserService {
             user.setEmail(updatedUser.getEmail());
             user.setRole(updatedUser.getRole());
             user.setPassword(updatedUser.getPassword());
-            // add more fields as needed
             return userRepository.save(user);
         }).orElseThrow(() -> new RuntimeException("User not found with id " + id));
     }
@@ -31,7 +30,7 @@ public class UserServiceImpl implements UserService {
         if (existing != null) {
             throw new RuntimeException("Email already in use");
         }
-        return userRepository.save(user);  // safe for new users
+        return userRepository.save(user);
     }
 
 

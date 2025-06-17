@@ -8,7 +8,7 @@ public class PaymentRequest {
     private Long parkingSpaceId;
     private double amount;
     private String paymentMethod;
-    private String cardNumber; // for mock validation
+    private String cardNumber;
     private String cardExpiry;
     private String cardCvv;
 

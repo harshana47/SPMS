@@ -19,7 +19,6 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Payment processPayment(PaymentRequest request) {
-        // Validate mock card (dummy check)
         if (!request.getCardNumber().startsWith("4")) {
             throw new RuntimeException("Invalid card number. Only mock Visa supported.");
         }
@@ -33,7 +32,6 @@ public class PaymentServiceImpl implements PaymentService {
         payment.setTransactionId(UUID.randomUUID().toString());
         payment.setTimestamp(LocalDateTime.now());
 
-        // Generate receipt
         String receipt = generateReceipt(payment);
         payment.setReceipt(receipt);
 

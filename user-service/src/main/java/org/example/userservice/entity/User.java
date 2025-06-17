@@ -21,7 +21,7 @@ public class User {
 
     private String password;
     private String email;
-    private String role; // DRIVER or OWNER
+    private String role;
 
     @Version
     private Long version;

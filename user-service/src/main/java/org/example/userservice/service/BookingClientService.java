@@ -13,7 +13,7 @@ public class BookingClientService {
     private final RestTemplate restTemplate = new RestTemplate();
 
     public List<BookingDTO> getBookingHistory(Long userId) {
-        String url = "http://localhost:8082/users/" + userId + "/bookings"; // Replace 8082 if different
+        String url = "http://localhost:8082/users/" + userId + "/bookings";
         BookingDTO[] bookings = restTemplate.getForObject(url, BookingDTO[].class);
         return Arrays.asList(bookings);
     }
