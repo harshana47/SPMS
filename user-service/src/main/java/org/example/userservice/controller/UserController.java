@@ -2,10 +2,12 @@ package org.example.userservice.controller;
 
 
 import org.example.userservice.dto.BookingDTO;
+import org.example.userservice.dto.LoginRequestDTO;
 import org.example.userservice.entity.User;
 import org.example.userservice.service.BookingClientService;
 import org.example.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,5 +55,10 @@ public class UserController {
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
         User updatedUser = userService.updateUser(id, user);
         return ResponseEntity.ok(updatedUser);
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody LoginRequestDTO request) {
+        return ResponseEntity.ok(userService.loginUser(request));
     }
 }

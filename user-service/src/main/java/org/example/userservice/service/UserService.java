@@ -1,5 +1,6 @@
 package org.example.userservice.service;
 
+import org.example.userservice.dto.LoginRequestDTO;
 import org.example.userservice.entity.User;
 
 import java.util.List;
@@ -15,4 +16,6 @@ public interface UserService {
     void deleteUser(Long id);
 
     User updateUser(Long id, User updatedUser);
+
+    public String loginUser(LoginRequestDTO request);
 }

@@ -1,18 +1,11 @@
-server:
-  port: 8082
-
 spring:
   application:
     name: booking-service
-
-  config:
-    import: optional:configserver:http://localhost:8888
 
   datasource:
     url: jdbc:mysql://localhost:3306/booking_db?useSSL=false&serverTimezone=UTC
     username: root
     password: harshima@147
-    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
@@ -22,13 +15,10 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
 
+server:
+  port: 8082
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    prefer-ip-address: true
-
-logging:
-  level:
-    org.springframework: INFO
+      defaultZone: http://localhost:8761/eureka
